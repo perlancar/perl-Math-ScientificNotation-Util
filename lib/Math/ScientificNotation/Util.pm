@@ -8,6 +8,8 @@ our @EXPORT_OK = qw(sci2dec);
 
 sub sci2dec {
     my $num = shift;
+    die "Please specify a number" unless defined $num;
+
     if ($num =~ /\A(?:[+-]?)(?:\d+\.|\d*\.(\d+))[eE]([+-]?\d+)\z/) {
         my $num_digs_after_dec = length($1 || "") - $2;
         $num_digs_after_dec = 0 if $num_digs_after_dec < 0;
@@ -16,7 +18,7 @@ sub sci2dec {
         # already in decimal notation
         return $num;
     } else {
-        die "Not a decimal number";
+        die "Not a decimal number: $num";
     }
 }
 
