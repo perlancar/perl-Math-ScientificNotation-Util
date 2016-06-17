@@ -10,7 +10,7 @@ sub sci2dec {
     my $num = shift;
     die "Please specify a number" unless defined $num;
 
-    if ($num =~ /\A(?:[+-]?)(?:\d+\.|\d*\.(\d+))[eE]([+-]?\d+)\z/) {
+    if ($num =~ /\A(?:[+-]?)(?:\d+\.?|\d*\.(\d+))[eE]([+-]?\d+)\z/) {
         my $num_digs_after_dec = length($1 || "") - $2;
         $num_digs_after_dec = 0 if $num_digs_after_dec < 0;
         return sprintf("%.${num_digs_after_dec}f", $num);

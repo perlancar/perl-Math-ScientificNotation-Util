@@ -9,6 +9,8 @@ is(sci2dec("1.23"), "1.23");
 
 # test dies when fed a non-number
 
+is(sci2dec("1e3")     , "1000");
+
 is(sci2dec("1.23e20") , "123000000000000000000");
 is(sci2dec("1.23e3")  , "1230");
 is(sci2dec("+1.23e3") , "1230");
