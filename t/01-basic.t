@@ -1,6 +1,7 @@
 #!perl
 
 use Math::ScientificNotation::Util qw(sci2dec);
+use Test::Exception;
 use Test::More 0.98;
 
 # pass decimal notation unchanged
@@ -8,6 +9,7 @@ is(sci2dec("1"), "1");
 is(sci2dec("1.23"), "1.23");
 
 # test dies when fed a non-number
+dies_ok { sci2dec("foo") };
 
 is(sci2dec("1e3")     , "1000");
 
