@@ -1,5 +1,12 @@
 Revision history for Math-ScientificNotation-Util
 
+0.002   2016-06-17 (PERLANCAR)
+
+	- [Bugfix] Fix regex to recognize decimal number.
+
+	- Check undef argument, print argument in error message.
+
+
 0.001   2016-06-17 (PERLANCAR)
 
         - First release.
