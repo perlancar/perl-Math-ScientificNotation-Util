@@ -14,7 +14,7 @@ sub sci2dec {
         my $num_digs_after_dec = length($1 || "") - $2;
         $num_digs_after_dec = 0 if $num_digs_after_dec < 0;
         return sprintf("%.${num_digs_after_dec}f", $num);
-    } elsif ($num =~ /\A[+-]?(?:\d+\.|\d*\.\d+)\z/) {
+    } elsif ($num =~ /\A[+-]?(?:\d+\.?|\d*\.\d+)\z/) {
         # already in decimal notation
         return $num;
     } else {
